@@ -144,9 +144,13 @@ class PictureWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: const Color.fromARGB(255, 255, 255, 255),
-      padding: const EdgeInsets.all(16.0),
+    return Material( // changed from contaienr to material
+      elevation: 10.0,
+      borderRadius: BorderRadius.circular(20.0),
+      shadowColor: Colors.black.withOpacity(0.5),
+
+      //color: const Color.fromARGB(255, 255, 255, 255),
+      //padding: const EdgeInsets.all(16.0),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20.0), // Adjust the radius for rounded corners
         child: Container(
@@ -173,8 +177,12 @@ class CrimsonConnectionWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(4.0),
+    return Material(
+      elevation: 10.0, // added elevation
+      borderRadius: BorderRadius.circular(20.0),
+      shadowColor: Colors.black.withOpacity(0.5),
+      
+      //padding: const EdgeInsets.all(4.0),
       child: Column(
         children: [
           ClipRRect(
@@ -237,25 +245,101 @@ class OfficersWidget extends StatelessWidget {
                 border: Border.all(color: const Color.fromARGB(255, 249, 220, 56), width: 4.0), 
                 borderRadius: BorderRadius.circular(20.0), 
               ),
-              child: const Text(
-                "President: Carson Siegrest \n"
-                "csiegr@nmsu.edu \n\n"
-                "Vice President: Rupak Dey \n"
-                "rupakdey@nmsu.edu \n\n"
-                "Secretary: Allison Barricklow \n"
-                "aab05@nmsu.edu \n\n"
-                "Treasurer: Benjamin Widner III \n"
-                "bbwidner3@nmsu.edu",
-                style: TextStyle(fontSize: 25, color: Colors.black),
-                textAlign: TextAlign.center,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Row(
+                    children: [
+                      Icon(Icons.person, color: Colors.black,),
+                      const Text(
+                        "President: Carson Siegrest ",
+                      style: TextStyle(fontSize: 25,color: Colors.black,),
+                      textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  Row(
+                      children: [
+                      Icon(Icons.mail, color: Colors.black,),
+                      const Text(
+                        "csiegr@nmsu.edu ",
+                      style: TextStyle(fontSize: 25,color: Colors.black,),
+                      textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20), // space between different people 
+                  Row(
+                      children: [
+                      Icon(Icons.person, color: Colors.black,),
+                      const Text(
+                        " Vice President: Rupak Dey",
+                      style: TextStyle(fontSize: 25,color: Colors.black,),
+                      textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  Row(
+                      children: [
+                      Icon(Icons.mail, color: Colors.black,),
+                      const Text(
+                        "rupakdey@nmsu.edu ",
+                      style: TextStyle(fontSize: 25,color: Colors.black,),
+                      textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20), // space between different people 
+                  Row(
+                      children: [
+                      Icon(Icons.person, color: Colors.black,),
+                      const Text(
+                        "Secretary: Allison Barricklow",
+                      style: TextStyle(fontSize: 25,color: Colors.black,),
+                      textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  Row(
+                      children: [
+                      Icon(Icons.mail, color: Colors.black,),
+                      const Text(
+                        "aab05@nmsu.edu",
+                      style: TextStyle(fontSize: 25,color: Colors.black,),
+                      textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20), // space between different people 
+                  Row(
+                      children: [
+                      Icon(Icons.person, color: Colors.black,),
+                      const Text(
+                        "Treasurer: Benjamin Widner III",
+                      style: TextStyle(fontSize: 25,color: Colors.black,),
+                      textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  Row(
+                      children: [
+                      Icon(Icons.mail, color: Colors.black,),
+                      const Text(
+                        "bbwidner3@nmsu.edu",
+                      style: TextStyle(fontSize: 25,color: Colors.black,),
+                      textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
-      ),
-    );
+          ],
+        ),
+      );
+    }
   }
-}
 
 
 // format headers
