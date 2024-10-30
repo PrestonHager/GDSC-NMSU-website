@@ -4,3 +4,4 @@
 
 export 'homepage.dart';
 export 'event_page.dart';
+export 'contact.dart';
