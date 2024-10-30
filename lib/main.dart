@@ -44,6 +44,11 @@ class _MyAppState extends State<MyApp> {
           _isDarkMode = isDarkMode;
         });
         }),
+        '/contact': (context) => ContactPage(onThemeChanged: (isDarkMode) {
+        setState(() {
+          _isDarkMode = isDarkMode;
+        });
+        }),
         // '/about': (context) => AboutPage();
         //Add other events as such.
       },

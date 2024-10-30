@@ -3,38 +3,47 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'custom_app_bar.dart';
 
+class ContactPage extends StatefulWidget {
+  final Function(bool) onThemeChanged;
 
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+  const ContactPage({super.key, required this.onThemeChanged});
+
+  @override
+  _ContactPage createState() => _ContactPage();
+}
+
+class _ContactPage extends State<ContactPage>{
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: ClipRRect(
-          borderRadius: BorderRadius.circular(20.0), 
-          child: Container(
-            padding: const EdgeInsets.all(16.0), 
-            decoration: BoxDecoration(
-              color: Colors.white, // background color 
-              border: Border.all(color: const Color.fromARGB(255, 29, 140, 19), width: 8.5), 
-            ),
-            child: const Text(
-              'Contact GDSC',
-              style: TextStyle(
-                fontSize: 45,
-                fontWeight: FontWeight.bold,
-                color: Colors.black,
-                //decoration: TextDecoration.underline,
-              ),
-            ),
-          ),
-        ),
-        toolbarHeight: 200.0,
-        shadowColor: const Color.fromARGB(255, 255, 255, 255),
-        backgroundColor: Colors.white,
-      ),
+      appBar: customAppBar(context, "Contact", widget.onThemeChanged),
+      // appBar: AppBar(
+      //   title: ClipRRect(
+      //     borderRadius: BorderRadius.circular(20.0), 
+      //     child: Container(
+      //       padding: const EdgeInsets.all(16.0), 
+      //       decoration: BoxDecoration(
+      //         color: Colors.white, // background color 
+      //         border: Border.all(color: const Color.fromARGB(255, 29, 140, 19), width: 8.5), 
+      //       ),
+      //       child: const Text(
+      //         'Contact GDSC',
+      //         style: TextStyle(
+      //           fontSize: 45,
+      //           fontWeight: FontWeight.bold,
+      //           color: Colors.black,
+      //           //decoration: TextDecoration.underline,
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      //   toolbarHeight: 200.0,
+      //   shadowColor: const Color.fromARGB(255, 255, 255, 255),
+      //   backgroundColor: Colors.white,
+      // ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -159,7 +168,7 @@ class PictureWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(20.0), // Ensure the border radius matches the ClipRRect
           ),
           child: Image.asset(
-            'assets/GSDC.png', 
+            '../assets/GSDC.png', 
             width: 300, // Adjust the size
             height: 300,
             fit: BoxFit.cover, // Adjust how the image should be displayed
