@@ -1,25 +1,25 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'custom_app_bar.dart';
 
-class HomePage extends StatelessWidget {
+
+class HomePage extends StatefulWidget {
+  final Function(bool) onThemeChanged;
+
+  const HomePage({super.key, required this.onThemeChanged});
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      appBar: AppBar(
-        title: Text(
-          'Google Developer Students Club',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 30,
-          ),
-        ),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-      ),
-
+      appBar: customAppBar(context, "Google Developers Student Club", widget.onThemeChanged),
 
       body: SingleChildScrollView(
         child: Padding(
@@ -90,7 +90,7 @@ class HomePage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   //navigate to the about us page later
-          
+                  // Navigator.pushNamed(context, '/events');
                 },
                 child: Text('Learn More'), 
                 style: ElevatedButton.styleFrom(

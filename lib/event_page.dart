@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter_countdown_timer/flutter_countdown_timer.dart';
 import 'package:lottie/lottie.dart'; 
+import 'custom_app_bar.dart';
 
 class EventsPage extends StatefulWidget {
   final Function(bool) onThemeChanged;
@@ -189,17 +190,8 @@ class _EventsPageState extends State<EventsPage> {
     _isEventDay = _events.containsKey(today);
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('GDSC Events'),
-        actions: [
-          Switch(
-            value: Theme.of(context).brightness == Brightness.dark,
-            onChanged: (value) {
-              widget.onThemeChanged(value);
-            },
-          ),
-        ],
-      ),
+      appBar: customAppBar(context, "Google Developers Student Club", widget.onThemeChanged),
+
       body: Stack(
         children: [
           Column(
