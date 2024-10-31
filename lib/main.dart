@@ -7,16 +7,6 @@ void main() {
   runApp(MyApp());
 }
 
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: HomePage(), // Set HomePage as the landing page
-//     );
-//   }
-// }
-
-
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
@@ -48,6 +38,16 @@ class _MyAppState extends State<MyApp> {
         setState(() {
           _isDarkMode = isDarkMode;
         });
+        }),
+        '/members': (context) => MembersPage(onThemeChanged: (isDarkMode) {
+          setState(() {
+            _isDarkMode = isDarkMode;
+          });
+        }),
+        '/profile': (context) => MemberPage(onThemeChanged: (isDarkMode) {
+          setState(() {
+            _isDarkMode = isDarkMode;
+          });
         }),
         // '/about': (context) => AboutPage();
         //Add other events as such.

@@ -128,15 +128,16 @@ class _HomePageState extends State<HomePage> {
                 height: 400.0,
                 enlargeCenterPage: true,
                 autoPlay: true,
-                aspectRatio: 16/9,
+                aspectRatio: 16 / 9,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
                 autoPlayAnimationDuration: Duration(milliseconds: 800),
                 viewportFraction: 0.8,
               ),
               items: [
-                //need to add images to the assets folder
-                
+                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img1.jpg',
+                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img2.jpg',
+                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img3.jpg',
               ].map((imagePath) {
                 return Builder(
                 builder: (BuildContext context) {
@@ -156,7 +157,7 @@ class _HomePageState extends State<HomePage> {
   Widget _buildImageCard(String imagePath) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 12.0),
-      width: 160, // Fixed width for the card
+      width: 1600, // Fixed width for the card
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0), // Modern rounded corners
         boxShadow: [
