@@ -133,9 +133,9 @@ class _HomePageState extends State<HomePage> {
                 viewportFraction: 0.8,
               ),
               items: [
-                'C:/Users/deyru/Desktop/gdsc/website/assets/img1.jpg',
-                'C:/Users/deyru/Desktop/gdsc/website/assets/img2.jpg',
-                'C:/Users/deyru/Desktop/gdsc/website/assets/img3.jpg',
+                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img1.jpg',
+                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img2.jpg',
+                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img3.jpg',
               ].map((imagePath) {
                 return Builder(
                 builder: (BuildContext context) {
