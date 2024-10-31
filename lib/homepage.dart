@@ -1,25 +1,25 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'custom_app_bar.dart';
 
-class HomePage extends StatelessWidget {
+
+class HomePage extends StatefulWidget {
+  final Function(bool) onThemeChanged;
+
+  const HomePage({super.key, required this.onThemeChanged});
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-      appBar: AppBar(
-        title: Text(
-          'Google Developer Students Club',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 30,
-          ),
-        ),
-        centerTitle: true,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
-        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-      ),
-
+      appBar: customAppBar(context, "Google Developers Student Club", widget.onThemeChanged),
 
       body: SingleChildScrollView(
         child: Padding(
@@ -90,7 +90,7 @@ class HomePage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   //navigate to the about us page later
-          
+                  // Navigator.pushNamed(context, '/events');
                 },
                 child: Text('Learn More'), 
                 style: ElevatedButton.styleFrom(
@@ -128,15 +128,16 @@ class HomePage extends StatelessWidget {
                 height: 400.0,
                 enlargeCenterPage: true,
                 autoPlay: true,
-                aspectRatio: 16/9,
+                aspectRatio: 16 / 9,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
                 autoPlayAnimationDuration: Duration(milliseconds: 800),
                 viewportFraction: 0.8,
               ),
               items: [
-                //need to add images to the assets folder
-                
+                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img1.jpg',
+                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img2.jpg',
+                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img3.jpg',
               ].map((imagePath) {
                 return Builder(
                 builder: (BuildContext context) {
@@ -156,7 +157,7 @@ class HomePage extends StatelessWidget {
   Widget _buildImageCard(String imagePath) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 12.0),
-      width: 160, // Fixed width for the card
+      width: 1600, // Fixed width for the card
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0), // Modern rounded corners
         boxShadow: [
