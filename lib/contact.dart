@@ -135,9 +135,9 @@ class CenterColumnWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: const [
+      children: [
         PictureWidget(), // Top section with logo/image
         SizedBox(height: 30.0), // Space between image and text input
         CrimsonConnectionWidget(), // Bottom section with text input
@@ -254,13 +254,13 @@ class OfficersWidget extends StatelessWidget {
                 border: Border.all(color: const Color.fromARGB(255, 249, 220, 56), width: 4.0), 
                 borderRadius: BorderRadius.circular(20.0), 
               ),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Row(
                     children: [
                       Icon(Icons.person, color: Colors.black,),
-                      const Text(
+                      Text(
                         "President: Carson Siegrest ",
                       style: TextStyle(fontSize: 25,color: Colors.black,),
                       textAlign: TextAlign.center,
@@ -270,18 +270,18 @@ class OfficersWidget extends StatelessWidget {
                   Row(
                       children: [
                       Icon(Icons.mail, color: Colors.black,),
-                      const Text(
+                      Text(
                         "csiegr@nmsu.edu ",
                       style: TextStyle(fontSize: 25,color: Colors.black,),
                       textAlign: TextAlign.center,
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20), // space between different people 
+                  SizedBox(height: 20), // space between different people 
                   Row(
                       children: [
                       Icon(Icons.person, color: Colors.black,),
-                      const Text(
+                      Text(
                         " Vice President: Rupak Dey",
                       style: TextStyle(fontSize: 25,color: Colors.black,),
                       textAlign: TextAlign.center,
@@ -291,18 +291,18 @@ class OfficersWidget extends StatelessWidget {
                   Row(
                       children: [
                       Icon(Icons.mail, color: Colors.black,),
-                      const Text(
+                      Text(
                         "rupakdey@nmsu.edu ",
                       style: TextStyle(fontSize: 25,color: Colors.black,),
                       textAlign: TextAlign.center,
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20), // space between different people 
+                  SizedBox(height: 20), // space between different people 
                   Row(
                       children: [
                       Icon(Icons.person, color: Colors.black,),
-                      const Text(
+                      Text(
                         "Secretary: Allison Barricklow",
                       style: TextStyle(fontSize: 25,color: Colors.black,),
                       textAlign: TextAlign.center,
@@ -312,18 +312,18 @@ class OfficersWidget extends StatelessWidget {
                   Row(
                       children: [
                       Icon(Icons.mail, color: Colors.black,),
-                      const Text(
+                      Text(
                         "aab05@nmsu.edu",
                       style: TextStyle(fontSize: 25,color: Colors.black,),
                       textAlign: TextAlign.center,
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20), // space between different people 
+                  SizedBox(height: 20), // space between different people 
                   Row(
                       children: [
                       Icon(Icons.person, color: Colors.black,),
-                      const Text(
+                      Text(
                         "Treasurer: Benjamin Widner III",
                       style: TextStyle(fontSize: 25,color: Colors.black,),
                       textAlign: TextAlign.center,
@@ -333,7 +333,7 @@ class OfficersWidget extends StatelessWidget {
                   Row(
                       children: [
                       Icon(Icons.mail, color: Colors.black,),
-                      const Text(
+                      Text(
                         "bbwidner3@nmsu.edu",
                       style: TextStyle(fontSize: 25,color: Colors.black,),
                       textAlign: TextAlign.center,

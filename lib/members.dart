@@ -24,14 +24,14 @@ class _MembersPage extends State<MembersPage> {
         //MemberArguments ("name", "link_to_resume", "Link_to_projects", "link_to_cool_image")
         children: [
           ListTile(
-            title: Text('Carson Siegrist'),
+            title: const Text('Carson Siegrist'),
             onTap: () {
               Navigator.pushNamed(context, '/profile',
                   arguments: MemberArguments('Carson Siegrist', 'https://drive.google.com/file/d/1x6i8-VhWIrD3V9iWVBYQgzBO49eJsDSP/view?usp=sharing', 'https://github.com/carsonSiegrist?tab=repositories', 'https://i.imgur.com/cUD8kui.jpeg'));
             },
           ),
           ListTile(
-            title: Text('Jane Smith'),
+            title: const Text('Jane Smith'),
             onTap: () {
               Navigator.pushNamed(context, '/profile',
                   arguments: MemberArguments('Jane Smith', 'https://pastebin.com/TRyxJNFD', 'https://github.com/torvalds', 'https://fastly.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U'));

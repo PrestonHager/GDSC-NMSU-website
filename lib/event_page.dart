@@ -179,7 +179,7 @@ class _EventsPageState extends State<EventsPage> {
   void _showRegistrationDialog(String eventTitle, DateTime eventDate) {
     if (eventDate.isBefore(DateTime.now())) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('This event has already passed!')),
+        const SnackBar(content: Text('This event has already passed!')),
       );
       return;
     }
@@ -315,13 +315,14 @@ final List<String> _eventFilterOptions = ['Upcoming events', 'Past events'];
 
 // Modify the build method to include a dropdown selection
 
-Widget build(BuildContext context) {
+@override
+  Widget build(BuildContext context) {
   DateTime today = DateUtils.dateOnly(DateTime.now());
 
   _isEventDay = _events.containsKey(today);
 
   return Scaffold(
-    appBar: customAppBar(context, "Contact", widget.onThemeChanged),
+    appBar: customAppBar(context, "Events and Activities", widget.onThemeChanged),
     body: Column(
       children: [
         TableCalendar(
@@ -406,7 +407,7 @@ Widget build(BuildContext context) {
                 });
               },
               isExpanded: true, // Makes dropdown fill the container width
-              underline: SizedBox(), // Removes the default underline
+              underline: const SizedBox(), // Removes the default underline
               dropdownColor: Theme.of(context).scaffoldBackgroundColor, // Matches dropdown menu background color
               icon: Icon(Icons.arrow_drop_down, color: Theme.of(context).primaryColor), // Custom icon color
             ),

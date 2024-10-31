@@ -1,0 +1,5 @@
+//ignoring demo and trial directories
+demo/
+trial/ 
+.dart_tool/
+

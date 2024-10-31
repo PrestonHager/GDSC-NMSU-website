@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 
 PreferredSizeWidget customAppBar(BuildContext context, String title, ValueChanged<bool> onThemeChanged) {
   return AppBar(
+    toolbarHeight: 130.0,
     title: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(top: 5.0), // Add padding above the title
+          padding: const EdgeInsets.only(top: 5.0, bottom: 10.0), // Add bottom padding to create margin
           child: Text(
             title,
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 25,
@@ -16,6 +18,8 @@ PreferredSizeWidget customAppBar(BuildContext context, String title, ValueChange
             ),
           ),
         ),
+
+        
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[

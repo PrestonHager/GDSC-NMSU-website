@@ -19,8 +19,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context, "Google Developers Student Club", widget.onThemeChanged),
-
+      appBar: customAppBar(context, "Google Developers Student Club\nNew Mexico State University", widget.onThemeChanged),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
@@ -30,7 +29,7 @@ class _HomePageState extends State<HomePage> {
               _buildSectionTitle('Welcome to GDSC'), // Section title
               _buildAboutUsCard(),
               
-              SizedBox(height: 40), // Spacing between sections
+              const SizedBox(height: 40), // Spacing between sections
               
               _buildSectionTitle('Gallery'),
               _buildGalleryCard(),
@@ -38,7 +37,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      backgroundColor: Color(0xFF8C0B42),
+      backgroundColor: const Color(0xFF8C0B42),
     );
   }
 
@@ -46,10 +45,10 @@ class _HomePageState extends State<HomePage> {
     return Center(
       child: Text(
         title,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 28,
           fontWeight: FontWeight.w600,
-          color: const Color.fromARGB(221, 247, 243, 243),
+          color: Color.fromARGB(221, 247, 243, 243),
         ),
       ),
     );
@@ -66,8 +65,8 @@ class _HomePageState extends State<HomePage> {
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18.0),
-          gradient: LinearGradient(
-            colors: [const Color.fromARGB(213, 77, 77, 77), const Color.fromARGB(255, 182, 185, 187)],
+          gradient: const LinearGradient(
+            colors: [Color.fromARGB(213, 77, 77, 77), Color.fromARGB(255, 182, 185, 187)],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
@@ -77,8 +76,8 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              Text(
-                'Intro goes here....',
+              const Text(
+                'At GDSC NMSU, we’re a community of tech enthusiasts and problem-solvers passionate about learning and leveraging technology to make an impact. Whether you’re looking to expand your programming skills, explore new technologies, or connect with like-minded peers, our club offers you the chance to grow and collaborate. \n\nJoin us to attend mock interviews conducted by Google Engineers, work on real-world projects, and gain invaluable insights from guest speakers and Google experts. \n\nReady to build your future in tech? Become a part of GDSC NMSU (No prior programming experience required)!',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 16,
@@ -86,16 +85,14 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
 
-              SizedBox(height: 20), // Spacing
+              const SizedBox(height: 20), // Spacing
               ElevatedButton(
                 onPressed: () {
-                  //navigate to the about us page later
-                  // Navigator.pushNamed(context, '/events');
-                },
-                child: Text('Learn More'), 
+                  Navigator.pushNamed(context, '/events');
+                }, 
                 style: ElevatedButton.styleFrom(
-                  padding: EdgeInsets.symmetric(horizontal: 32, vertical: 14),
-                  textStyle: TextStyle(fontSize: 18),
+                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+                  textStyle: const TextStyle(fontSize: 18),
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.blueAccent,
                   shape: RoundedRectangleBorder(
@@ -103,6 +100,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   elevation: 0,
                 ),
+                child: Text('Club Activities'),
               ),
             ],
           ),
@@ -121,7 +119,7 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: 400, // Adjust for optimal image height
               child: CarouselSlider(
               options: CarouselOptions(
@@ -131,13 +129,13 @@ class _HomePageState extends State<HomePage> {
                 aspectRatio: 16 / 9,
                 autoPlayCurve: Curves.fastOutSlowIn,
                 enableInfiniteScroll: true,
-                autoPlayAnimationDuration: Duration(milliseconds: 800),
+                autoPlayAnimationDuration: const Duration(milliseconds: 800),
                 viewportFraction: 0.8,
               ),
               items: [
-                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img1.jpg',
-                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img2.jpg',
-                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img3.jpg',
+                'C:/Users/deyru/Desktop/gdsc/website/assets/img1.jpg',
+                'C:/Users/deyru/Desktop/gdsc/website/assets/img2.jpg',
+                'C:/Users/deyru/Desktop/gdsc/website/assets/img3.jpg',
               ].map((imagePath) {
                 return Builder(
                 builder: (BuildContext context) {
@@ -156,11 +154,11 @@ class _HomePageState extends State<HomePage> {
   // Method to create an image card
   Widget _buildImageCard(String imagePath) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 12.0),
+      margin: const EdgeInsets.symmetric(horizontal: 12.0),
       width: 1600, // Fixed width for the card
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12.0), // Modern rounded corners
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black12,
             blurRadius: 6.0,

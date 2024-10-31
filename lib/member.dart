@@ -33,7 +33,7 @@ class _MemberPage extends State<MemberPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //Display name
-            Text('Name: ${args.name}', style: TextStyle(fontSize: 20)),
+            Text('Name: ${args.name}', style: const TextStyle(fontSize: 20)),
             const SizedBox(height: 10),
             
             //Display "Resume" as a hyperlink
