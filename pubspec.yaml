@@ -29,7 +29,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - /Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img1.jpg
-    - /Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img2.jpg
-    - /Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img3.jpg
+    - assets/img1.jpg
+    - assets/img2.jpg
+    - assets/img3.jpg
 
