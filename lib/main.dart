@@ -27,30 +27,30 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       routes: {
         '/': (context) => HomePage(onThemeChanged: (isDarkMode) {
-        setState(() {
-          _isDarkMode = isDarkMode;
-        });
-        }),
+              setState(() {
+                _isDarkMode = isDarkMode;
+              });
+            }),
         '/events': (context) => EventsPage(onThemeChanged: (isDarkMode) {
-        setState(() {
-          _isDarkMode = isDarkMode;
-        });
-        }),
+              setState(() {
+                _isDarkMode = isDarkMode;
+              });
+            }),
         '/contact': (context) => ContactPage(onThemeChanged: (isDarkMode) {
-        setState(() {
-          _isDarkMode = isDarkMode;
-        });
-        }),
+              setState(() {
+                _isDarkMode = isDarkMode;
+              });
+            }),
         '/members': (context) => MembersPage(onThemeChanged: (isDarkMode) {
-          setState(() {
-            _isDarkMode = isDarkMode;
-          });
-        }),
+              setState(() {
+                _isDarkMode = isDarkMode;
+              });
+            }),
         '/profile': (context) => MemberPage(onThemeChanged: (isDarkMode) {
-          setState(() {
-            _isDarkMode = isDarkMode;
-          });
-        }),
+              setState(() {
+                _isDarkMode = isDarkMode;
+              });
+            }),
         // '/about': (context) => AboutPage();
         //Add other events as such.
       },

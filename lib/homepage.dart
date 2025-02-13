@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'custom_app_bar.dart';
 
-
 class HomePage extends StatefulWidget {
   final Function(bool) onThemeChanged;
 
@@ -14,12 +13,14 @@ class HomePage extends StatefulWidget {
   _HomePageState createState() => _HomePageState();
 }
 
-
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(context, "Google Developers Student Club\nNew Mexico State University", widget.onThemeChanged),
+      appBar: customAppBar(
+          context,
+          "Google Developers Student Club\nNew Mexico State University",
+          widget.onThemeChanged),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 24.0),
@@ -28,9 +29,9 @@ class _HomePageState extends State<HomePage> {
             children: [
               _buildSectionTitle('Welcome to GDSC'), // Section title
               _buildAboutUsCard(),
-              
+
               const SizedBox(height: 40), // Spacing between sections
-              
+
               _buildSectionTitle('Gallery'),
               _buildGalleryCard(),
             ],
@@ -56,22 +57,22 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildAboutUsCard() {
     return Card(
-
       elevation: 6,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(18.0), // Rounded corners
       ),
-      
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18.0),
           gradient: const LinearGradient(
-            colors: [Color.fromARGB(213, 77, 77, 77), Color.fromARGB(255, 182, 185, 187)],
+            colors: [
+              Color.fromARGB(213, 77, 77, 77),
+              Color.fromARGB(255, 182, 185, 187)
+            ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
         ),
-
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
@@ -89,9 +90,10 @@ class _HomePageState extends State<HomePage> {
               ElevatedButton(
                 onPressed: () {
                   Navigator.pushNamed(context, '/events');
-                }, 
+                },
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
                   textStyle: const TextStyle(fontSize: 18),
                   backgroundColor: Colors.white,
                   foregroundColor: Colors.blueAccent,
@@ -122,27 +124,27 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 400, // Adjust for optimal image height
               child: CarouselSlider(
-              options: CarouselOptions(
-                height: 400.0,
-                enlargeCenterPage: true,
-                autoPlay: true,
-                aspectRatio: 16 / 9,
-                autoPlayCurve: Curves.fastOutSlowIn,
-                enableInfiniteScroll: true,
-                autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                viewportFraction: 0.8,
-              ),
-              items: [
-                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img1.jpg',
-                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img2.jpg',
-                '/Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img3.jpg',
-              ].map((imagePath) {
-                return Builder(
-                builder: (BuildContext context) {
-                  return _buildImageCard(imagePath);
-                },
-                );
-              }).toList(),
+                options: CarouselOptions(
+                  height: 400.0,
+                  enlargeCenterPage: true,
+                  autoPlay: true,
+                  aspectRatio: 16 / 9,
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  enableInfiniteScroll: true,
+                  autoPlayAnimationDuration: const Duration(milliseconds: 800),
+                  viewportFraction: 0.8,
+                ),
+                items: [
+                  './assets/img1.jpg',
+                  './assets/img2.jpg',
+                  './assets/img3.jpg',
+                ].map((imagePath) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return _buildImageCard(imagePath);
+                    },
+                  );
+                }).toList(),
               ),
             ),
           ],

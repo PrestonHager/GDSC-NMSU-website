@@ -1,10 +1,10 @@
 name: pagetrail
 description: "A new Flutter project."
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
@@ -29,7 +29,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - /Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img1.jpg
-    - /Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img2.jpg
-    - /Users/hathsin/Desktop/GDSC_final_real_version3/website/assets/img3.jpg
-
+    - ./assets/img1.jpg
+    - ./assets/img2.jpg
+    - ./assets/img3.jpg
