@@ -325,6 +325,13 @@ final List<String> _eventFilterOptions = ['Upcoming events', 'Past events'];
     appBar: customAppBar(context, "Events and Activities", widget.onThemeChanged),
     body: Column(
       children: [
+        if (_isEventDay && !_hasCelebrationPlayed)
+          Center(
+            child: Opacity(
+              opacity: 0.7,
+              child: _celebrateEventDay(),
+            ),
+          ),
         TableCalendar(
           // Same TableCalendar setup as before
           locale: "en_US",
@@ -419,13 +426,6 @@ final List<String> _eventFilterOptions = ['Upcoming events', 'Past events'];
               ? _buildUpcomingEventsList()
               : _buildPastEventsList(),
         ),
-        if (_isEventDay && !_hasCelebrationPlayed)
-          Center(
-            child: Opacity(
-              opacity: 0.7,
-              child: _celebrateEventDay(),
-            ),
-          ),
       ],
     ),
   );
