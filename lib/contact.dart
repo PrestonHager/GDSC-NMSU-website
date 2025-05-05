@@ -1,6 +1,7 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:mailto/mailto.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'custom_app_bar.dart';
@@ -241,6 +242,38 @@ class CrimsonConnectionWidget extends StatelessWidget {
   }
 }
 
+class EmailWidget extends StatelessWidget {
+  final String email;
+
+  const EmailWidget({super.key, required this.email});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () async {
+        final emailMailto = Mailto(
+          to: [email],
+        );
+        final emailUri = Uri.parse(emailMailto.toString());
+
+        if (await canLaunchUrl(emailUri)) {
+          await launchUrl(emailUri, mode: LaunchMode.externalApplication);
+        } else {
+          throw 'Could not launch email client';
+        }
+      },
+      child: Text(
+        email,
+        style: const TextStyle(
+          fontSize: 20,
+          color: Colors.blue,
+          decoration: TextDecoration.underline,
+        ),
+      ),
+    );
+  }
+}
+
 // officer info
 class OfficersWidget extends StatelessWidget {
   const OfficersWidget({super.key});
@@ -289,13 +322,8 @@ class OfficersWidget extends StatelessWidget {
                         Icons.mail,
                         color: Colors.black,
                       ),
-                      Text(
-                        "csiegr@nmsu.edu ",
-                        style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.black,
-                        ),
-                        textAlign: TextAlign.center,
+                      EmailWidget(
+                        email: "csiegr@nmsu.edu",
                       ),
                     ],
                   ),
@@ -322,13 +350,8 @@ class OfficersWidget extends StatelessWidget {
                         Icons.mail,
                         color: Colors.black,
                       ),
-                      Text(
-                        "rupakdey@nmsu.edu ",
-                        style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.black,
-                        ),
-                        textAlign: TextAlign.center,
+                      EmailWidget(
+                        email: "rupakdey@nmsu.edu ",
                       ),
                     ],
                   ),
@@ -355,13 +378,8 @@ class OfficersWidget extends StatelessWidget {
                         Icons.mail,
                         color: Colors.black,
                       ),
-                      Text(
-                        "aab05@nmsu.edu",
-                        style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.black,
-                        ),
-                        textAlign: TextAlign.center,
+                      EmailWidget(
+                        email: "aab05@nmsu.edu",
                       ),
                     ],
                   ),
@@ -388,13 +406,8 @@ class OfficersWidget extends StatelessWidget {
                         Icons.mail,
                         color: Colors.black,
                       ),
-                      Text(
-                        "bbwidner3@nmsu.edu",
-                        style: TextStyle(
-                          fontSize: 25,
-                          color: Colors.black,
-                        ),
-                        textAlign: TextAlign.center,
+                      EmailWidget(
+                        email: "bbwidner3@nmsu.edu",
                       ),
                     ],
                   ),
