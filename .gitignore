@@ -59,3 +59,8 @@ node_modules/
 *.swo
 *.DS_Store
 *.orig
+
+# Flutter generated files
+.flutter-plugins
+.flutter-plugins-dependencies
+
