@@ -1,0 +1,61 @@
+//ignoring demo and trial directories
+demo/
+trial/ 
+
+#Generated gitignore with GPT 
+
+# Flutter specific
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+build/
+
+# Android specific
+android/.gradle/
+android/app/*.keystore
+android/app/key.properties
+android/local.properties
+
+# iOS specific
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/
+ios/.generated/
+
+# Web specific
+web/.dart_tool/
+web/.firebase/
+
+# macOS specific
+macos/Flutter/ephemeral/
+macos/.dart_tool/
+
+# Linux specific
+linux/flutter/ephemeral/
+linux/.dart_tool/
+
+# Windows specific
+windows/flutter/ephemeral/
+windows/.dart_tool/
+
+# VS Code
+.vscode/
+
+# IntelliJ/Android Studio
+.idea/
+*.iml
+
+# Logs and crash reports
+*.log
+*.lock
+
+# Dependency directories
+node_modules/
+
+# Miscellaneous
+*.swp
+*.swo
+*.DS_Store
+*.orig
