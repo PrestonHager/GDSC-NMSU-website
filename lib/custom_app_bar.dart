@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 PreferredSizeWidget customAppBar(BuildContext context, String title, ValueChanged<bool> onThemeChanged) {
   return AppBar(
     toolbarHeight: 130.0,
+    automaticallyImplyLeading: false,
     title: Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
