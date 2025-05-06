@@ -306,7 +306,6 @@ class _EventsPageState extends State<EventsPage> {
     return const Text('No upcoming events', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold));
   }
 
-  @override
   // Add a variable to track the selected dropdown option
 String _selectedEventFilter = 'Upcoming events';
 

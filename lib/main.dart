@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart' show rootBundle;
-import 'package:flutter_html/flutter_html.dart';
 import 'all_pages.dart';
 
 void main() {
