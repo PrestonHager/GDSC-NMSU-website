@@ -51,6 +51,11 @@ class _MyAppState extends State<MyApp> {
                 _isDarkMode = isDarkMode;
               });
             }),
+        '/resources': (context) => ResourcesPage(onThemeChanged: (isDarkMode) {
+              setState(() {
+                _isDarkMode = isDarkMode;
+              });
+            }),
         // '/about': (context) => AboutPage();
         //Add other events as such.
       },

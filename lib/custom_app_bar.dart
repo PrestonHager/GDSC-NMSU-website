@@ -67,6 +67,17 @@ PreferredSizeWidget customAppBar(BuildContext context, String title, ValueChange
                 style: TextStyle(color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black),
               ),
             ),
+            TextButton(
+              onPressed: () {
+                if (ModalRoute.of(context)?.settings.name != '/resources') {
+                  Navigator.pushNamed(context, '/resources'); // Navigate to Resources page
+                }
+              },
+              child: Text(
+                'Resources',
+                style: TextStyle(color: Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black),
+              ),
+            ),
           ],
         ),
       ],

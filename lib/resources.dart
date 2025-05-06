@@ -44,4 +44,31 @@ Column buildResourceLinks() {
   );
 }
 
+// Create ResourcesPage widget
+class ResourcesPage extends StatelessWidget {
+  final Function(bool) onThemeChanged;
+
+  const ResourcesPage({super.key, required this.onThemeChanged});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Resources'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.brightness_6),
+            onPressed: () {
+              onThemeChanged(Theme.of(context).brightness == Brightness.light);
+            },
+          ),
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: buildResourceLinks(),
+      ),
+    );
+  }
+}
 
